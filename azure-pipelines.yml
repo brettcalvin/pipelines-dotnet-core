@@ -23,6 +23,8 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
     
+- task: PublishBuildArtifacts@1
+    
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
