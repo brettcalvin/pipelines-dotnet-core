@@ -1,6 +1,6 @@
 # File: azure-pipelines.yml
 
 stages:
-- template: templates/test.yml  # Template reference
+- template: templates/test.yml
   parameters:
     buildConfiguration: 'Release'
