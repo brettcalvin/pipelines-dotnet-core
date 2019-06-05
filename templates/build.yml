@@ -1,8 +1,8 @@
 # build yaml
 
-stage: 'Build'
-displayName: 'Build'
+- stage: 'Build'
+- displayName: 'Build'
 
-- script: dotnet restore
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  - script: dotnet restore
+  - script: dotnet build --configuration $(buildConfiguration)
+    displayName: 'dotnet build $(buildConfiguration)'
