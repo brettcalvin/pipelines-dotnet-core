@@ -1,5 +1,13 @@
-# build yaml
+# File: stages/test.yml
 
-- script: dotnet restore
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+stages:
+- stage: Build_${{ parameters.buildConfiguration }}
+  jobs:
+  - job: ${{ parameters.buildConfiguration }}_Windows
+    pool:
+      vmImage: vs2017-win2016
+    steps:
+      - script: dotnet restore
+      - script: dotnet build --configuration ${{ parameters.buildConfiguration }}
+        displayName: 'dotnet build ${{ parameters.buildConfiguration }}'
+ 
