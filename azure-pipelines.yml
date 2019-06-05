@@ -2,10 +2,10 @@
 
 stages:
 
-- template: templates/test.yml
+- template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
 
-- template: templates/test.yml
+- template: templates/build.yml
   parameters:
     buildConfiguration: 'Release'
