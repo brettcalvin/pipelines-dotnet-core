@@ -12,10 +12,8 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- script: dotnet restore
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+jobs:
+- template: templates/build.yml
   
 - task: DotNetCoreCLI@2
   inputs:
