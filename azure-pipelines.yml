@@ -12,6 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
+jobs:
 - template: templates/build.yml
   
 - task: DotNetCoreCLI@2
