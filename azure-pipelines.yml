@@ -3,10 +3,4 @@
 stages:
 - template: templates/test.yml  # Template reference
   parameters:
-    name: Mini
-    testFile: tests/miniSuite.js
-
-- template: templates/test.yml  # Template reference
-  parameters:
-    name: Full
-    testFile: tests/fullSuite.js
+    buildConfiguration: 'Release'
