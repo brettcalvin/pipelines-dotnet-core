@@ -6,12 +6,9 @@
 trigger:
 - master
 
-variables:
-  buildConfiguration: 'Release'
-
 jobs:
 - template: templates/build.yml
   parameters:
-    buildConfiguration: ${{ buildConfiguration }}
+    buildConfiguration: 'Release'
     pool:
       vmImage: 'macOS-10.13'
