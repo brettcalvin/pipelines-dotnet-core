@@ -6,7 +6,7 @@
 trigger:
 - master
 
-jobs:
+stages:
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Release'
