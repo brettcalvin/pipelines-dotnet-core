@@ -1,21 +1,13 @@
 # File: stages/test.yml
 
-parameters:
-  name: ''
-  testFile: ''
-
 stages:
-- stage: Test_${{ parameters.name }}
+- stage: Build_${{ parameters.buildConfiguration }}
   jobs:
-  - job: ${{ parameters.name }}_Windows
+  - job: ${{ parameters.buildConfiguration }}_Windows
     pool:
       vmImage: vs2017-win2016
     steps:
-    - script: npm install
-    - script: npm test -- --file=${{ parameters.testFile }}
-  - job: ${{ parameters.name }}_Mac
-    pool:
-      vmImage: macos-10.13
-    steps:
-    - script: npm install
-    - script: npm test -- --file=${{ parameters.testFile }}
+      - script: dotnet restore
+      - script: dotnet build --configuration $(parameters.buildConfiguration)
+        displayName: 'dotnet build $(parameters.buildConfiguration)'
+ 
