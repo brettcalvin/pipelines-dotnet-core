@@ -8,6 +8,6 @@ stages:
       vmImage: vs2017-win2016
     steps:
       - script: dotnet restore
-      - script: dotnet build --configuration $(parameters.buildConfiguration)
-        displayName: 'dotnet build $(parameters.buildConfiguration)'
+      - script: dotnet build --configuration ${{ parameters.buildConfiguration }}
+        displayName: 'dotnet build ${{ parameters.buildConfiguration }}'
  
