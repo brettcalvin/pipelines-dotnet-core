@@ -1,4 +1,4 @@
-# File: stages/test.yml
+# File: stages/build.yml
 
 stages:
 - stage: Build_${{ parameters.buildConfiguration }}
