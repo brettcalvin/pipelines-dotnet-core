@@ -1,15 +1,21 @@
 # File: azure-pipelines.yml
 
+resources:
+  repositories:
+  - repository: shared
+    type: git
+    name: BrettSandbox/Shared
+
 stages:
 
-- template: templates/build.yml
+- template: templates/build.yml@shared
   parameters:
     buildConfiguration: 'Debug'
 
-- template: templates/build.yml
+- template: templates/build.yml@shared
   parameters:
     buildConfiguration: 'Release'
     
-- template: templates/publish.yml
+- template: templates/publish.yml@shared
   parameters:
     buildConfiguration: 'Release'
