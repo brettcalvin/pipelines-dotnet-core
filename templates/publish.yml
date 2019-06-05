@@ -1,7 +1,7 @@
 # File: stages/publish.yml
 
 stages:
-- stage: Build_${{ parameters.buildConfiguration }}
+- stage: Publish_${{ parameters.buildConfiguration }}
   jobs:
   - job: ${{ parameters.buildConfiguration }}_Windows
     pool:
